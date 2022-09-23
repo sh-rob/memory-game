@@ -1,0 +1,33 @@
+@import "styles/colors.module";
+
+.rounded {
+  border-radius: 30px;
+  border: 1px solid $soapstone;
+  width: 100%;
+  padding: 0.25em 2em;
+  font-family: "Atkinson Hyperlegible", regular;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dark {
+  background-color: $dark;
+}
+
+.pickledBlueWood {
+  background-color: $pickled-blue-wood;
+  color: $soapstone;
+
+  &:hover {
+    background-color: $hippie-blue;
+  }
+}
+
+.jungleMist {
+  background-color: $jungle-mist;
+  color: $soapstone;
+
+  &:hover {
+    background-color: $hippie-blue;
+  }
+}
