@@ -1,0 +1,17 @@
+@import "styles/colors.module";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  background-color: $pickled-blue-wood;
+  border: 1px solid $pickled-blue-wood;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+}
+
+.value {
+  color: $soapstone;
+}
