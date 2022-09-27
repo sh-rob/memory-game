@@ -1,0 +1,20 @@
+@import "styles/colors.module";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  background-color: #dfe7ec;
+  height: 50px;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.title {
+  color: $grey-blue;
+}
+
+.content {
+  color: $pickled-blue-wood;
+}

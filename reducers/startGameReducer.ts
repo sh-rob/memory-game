@@ -1,8 +1,4 @@
-export enum TOGGLE {
-  THEME = "TOGGLE_THEME",
-  PLAYERS = "TOGGLE_PLAYERS",
-  GRID_SIZE = "TOGGLE_GRID_SIZE",
-}
+import { TOGGLE } from "../enums";
 
 type State = {
   theme: {

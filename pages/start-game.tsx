@@ -1,8 +1,10 @@
 import { useReducer } from "react";
-import Button from "../button/Button";
-import { startGameReducer, TOGGLE } from "../../reducers/startGameReducer";
+import { startGameReducer } from "../reducers/startGameReducer";
+import { TOGGLE } from "../enums";
+import Button from "../components/button/button";
+import Link from "next/link";
 
-import classes from "./StartGame.module.scss";
+import classes from "../styles/start-game.module.scss";
 
 const StartGame = () => {
   const initialState = {
@@ -113,9 +115,9 @@ const StartGame = () => {
           </Button>
         </div>
       </div>
-      <button onClick={() => {}} className={classes.startGameButton}>
-        Start Game
-      </button>
+      <Link href="/game">
+        <button className={classes.startGameButton}>Start Game</button>
+      </Link>
     </div>
   );
 };

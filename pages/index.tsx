@@ -1,10 +1,13 @@
-import styles from "../styles/App.module.scss";
-import StartGame from "./components/start-game/StartGame";
+import StartGame from "./start-game";
+import MemoryTitle from "../components/memory-title/memory-title";
+import classes from "../styles/index.module.scss";
 
 const App = () => {
   return (
-    <div className={styles.container}>
-      <h2 className={styles.memoryTitle}>memory</h2>
+    <div className={classes.container}>
+      <div className={classes.memory}>
+        <MemoryTitle color="soapstone" />
+      </div>
       <StartGame />
     </div>
   );

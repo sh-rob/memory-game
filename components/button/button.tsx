@@ -1,14 +1,17 @@
+import React from "react";
+import Link from "next/link";
 import classNames from "classnames";
 import classes from "./Button.module.scss";
 
 interface PassedProps {
   children: string;
   variant: string;
-  onClick: () => void;
+  onClick?: () => void;
+  pathName?: string;
 }
 
-const Button = ({ children, variant, onClick }: PassedProps) => {
-  return (
+const Button = ({ variant, onClick, pathName, children }: PassedProps) => {
+  const button = (
     <button
       onClick={onClick}
       className={classNames([classes.rounded], {
@@ -19,6 +22,12 @@ const Button = ({ children, variant, onClick }: PassedProps) => {
       {children}
     </button>
   );
+
+  if (pathName) {
+    return <Link href={pathName}>{button}</Link>;
+  }
+
+  return button;
 };
 
 export default Button;
