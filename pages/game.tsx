@@ -1,10 +1,10 @@
-import MemoryTitle from "../components/memory-title/memory-title";
-import Button from "../components/button/button";
 import Board from "../components/board/board";
+import Button from "../components/button/button";
+import GreyBox from "../components/grey-box/grey-box";
+import MemoryTitle from "../components/memory-title/memory-title";
 import Timer from "../components/timer/timer";
 
 import classes from "../styles/game.module.scss";
-import GreyBox from "../components/grey-box/grey-box";
 
 const Game = () => {
   return (
@@ -12,10 +12,10 @@ const Game = () => {
       <header className={classes.header}>
         <MemoryTitle color="dark" />
         <div className={classes.buttons}>
-          <Button variant="squash" pathName="/game">
+          <Button size="small" variant="squash" pathName="/game">
             Restart
           </Button>
-          <Button variant="jungleMist" pathName="/">
+          <Button size="small" variant="jungleMist" pathName="/">
             New Game
           </Button>
         </div>
