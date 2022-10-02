@@ -5,7 +5,7 @@
   padding: 2rem;
   border-radius: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 367px;
 }
 
 .seperator {
@@ -20,9 +20,8 @@
 
 .buttonGroupFour {
   display: grid;
-  grid-template-columns: repeat(3, 0.25fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 0.5rem;
-  width: 100%;
 }
 
 .header {
@@ -30,19 +29,12 @@
   color: $grey-blue;
 }
 
-.startGameButton {
-  border-radius: 30px;
-  border: 1px solid $soapstone;
-  width: 100%;
-  padding: 0.5em;
-  font-family: "Atkinson Hyperlegible", regular;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: $squash;
-  color: $soapstone;
-  margin-top: 1.25rem;
+.smartGameButton {
+  margin-top: 2rem;
+}
 
-  &:hover {
-    background-color: hsl(36°, 100%, 65%);
+@media (min-width: 768px) {
+  .container {
+    max-width: 400px;
   }
 }
