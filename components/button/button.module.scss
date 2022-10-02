@@ -4,10 +4,21 @@
   border-radius: 30px;
   border: 1px solid $soapstone;
   width: 100%;
-  padding: 0.25em 2em;
   font-family: "Atkinson Hyperlegible", regular;
   font-weight: bold;
   cursor: pointer;
+}
+
+.small {
+  padding: 0.5rem 1rem;
+}
+
+.medium {
+  padding: 0.5rem 0.25rem;
+}
+
+.large {
+  padding: 0.75rem 2rem;
 }
 
 .dark {
@@ -17,6 +28,10 @@
 .pickledBlueWood {
   background-color: $pickled-blue-wood;
   color: $soapstone;
+
+  &__blue {
+    color: $dark;
+  }
 
   &:hover {
     background-color: $hippie-blue;
@@ -29,5 +44,14 @@
 
   &:hover {
     background-color: $hippie-blue;
+  }
+}
+
+.squash {
+  background-color: $squash;
+  color: $soapstone;
+
+  &:hover {
+    background-color: #ffb84a;
   }
 }
