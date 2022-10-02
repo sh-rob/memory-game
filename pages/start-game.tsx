@@ -2,7 +2,6 @@ import { useReducer } from "react";
 import { startGameReducer } from "../reducers/startGameReducer";
 import { TOGGLE } from "../enums";
 import Button from "../components/button/button";
-import Link from "next/link";
 
 import classes from "../styles/start-game.module.scss";
 
@@ -40,6 +39,7 @@ const StartGame = () => {
         <h3 className={classes.header}>Select Theme</h3>
         <div className={classes.buttonGroupTwo}>
           <Button
+            size="medium"
             onClick={() => {
               dispatch({ type: TOGGLE.THEME });
             }}
@@ -48,6 +48,7 @@ const StartGame = () => {
             Numbers
           </Button>
           <Button
+            size="medium"
             onClick={() => {
               dispatch({ type: TOGGLE.THEME });
             }}
@@ -61,6 +62,7 @@ const StartGame = () => {
         <h3 className={classes.header}>Number of Players</h3>
         <div className={classes.buttonGroupFour}>
           <Button
+            size="small"
             onClick={() => {
               dispatch({ type: TOGGLE.PLAYERS, payload: "one" });
             }}
@@ -69,6 +71,7 @@ const StartGame = () => {
             1
           </Button>
           <Button
+            size="small"
             onClick={() => {
               dispatch({ type: TOGGLE.PLAYERS, payload: "two" });
             }}
@@ -77,6 +80,7 @@ const StartGame = () => {
             2
           </Button>
           <Button
+            size="small"
             onClick={() => {
               dispatch({ type: TOGGLE.PLAYERS, payload: "three" });
             }}
@@ -85,6 +89,7 @@ const StartGame = () => {
             3
           </Button>
           <Button
+            size="small"
             onClick={() => {
               dispatch({ type: TOGGLE.PLAYERS, payload: "four" });
             }}
@@ -98,6 +103,7 @@ const StartGame = () => {
         <h3 className={classes.header}>Grid Size</h3>
         <div className={classes.buttonGroupTwo}>
           <Button
+            size="medium"
             onClick={() => {
               dispatch({ type: TOGGLE.GRID_SIZE });
             }}
@@ -106,6 +112,7 @@ const StartGame = () => {
             4x4
           </Button>
           <Button
+            size="medium"
             onClick={() => {
               dispatch({ type: TOGGLE.GRID_SIZE });
             }}
@@ -115,9 +122,11 @@ const StartGame = () => {
           </Button>
         </div>
       </div>
-      <Link href="/game">
-        <button className={classes.startGameButton}>Start Game</button>
-      </Link>
+      <div className={classes.smartGameButton}>
+        <Button size="large" variant="squash" pathName="/game">
+          Start Game
+        </Button>
+      </div>
     </div>
   );
 };

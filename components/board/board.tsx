@@ -24,8 +24,6 @@ const Board = () => {
 
   const { tiles, moves, flippedTiles, matches } = state;
 
-  console.log("flipped tiles length: ", flippedTiles.length);
-
   useEffect(() => {
     if (tiles.size === 0) {
       dispatch({ type: BOARD.FILL_BOARD });
