@@ -29,19 +29,22 @@ export const boardReducer = (state: State, action: Action): State => {
         flippedTiles,
         tiles: shuffledTiles,
       };
+
     case BOARD.FLIP_TILE:
-      const flippedTile = tiles.get(action.payload.id);
+      if (flippedTiles.length < 2) {
+        const flippedTile = tiles.get(action.payload.id);
 
-      if (flippedTile && !flippedTile.flipped) {
-        flippedTile.flipped = true;
+        if (flippedTile && !flippedTile.flipped) {
+          flippedTile.flipped = true;
+        }
+
+        return {
+          tiles,
+          moves,
+          matches,
+          flippedTiles: [...state.flippedTiles, action.payload],
+        };
       }
-
-      return {
-        tiles,
-        moves,
-        matches,
-        flippedTiles: [...state.flippedTiles, action.payload],
-      };
 
     case BOARD.RECORD_MOVE:
       if (flippedTiles.length === 2) {
@@ -52,16 +55,16 @@ export const boardReducer = (state: State, action: Action): State => {
 
         if (flippedTilesDefined) {
           if (firstFlippedTile.value === secondFlippedTile.value) {
+            console.log("running");
             firstFlippedTile.matched = true;
             secondFlippedTile.matched = true;
-            matches + 1;
+            state.matches + 1;
           } else {
             firstFlippedTile.flipped = false;
             secondFlippedTile.flipped = false;
           }
         }
-
-        moves + 1;
+        state.moves + 1;
       }
 
       return {

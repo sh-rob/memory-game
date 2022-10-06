@@ -30,7 +30,9 @@ const Board = () => {
     }
 
     if (flippedTiles.length === 2) {
-      dispatch({ type: BOARD.RECORD_MOVE });
+      setTimeout(() => {
+        dispatch({ type: BOARD.RECORD_MOVE });
+      }, 1000);
     }
   }, [flippedTiles]);
 
