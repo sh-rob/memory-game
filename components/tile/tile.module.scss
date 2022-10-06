@@ -1,17 +1,52 @@
 @import "styles/colors.module";
 
-.container {
+.tile {
+  border-radius: 5rem;
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  perspective: 600px;
+}
+
+.innerTile {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+
+  &.flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.face {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 3px 18px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5rem;
-  background-color: $pickled-blue-wood;
-  border: 1px solid $pickled-blue-wood;
-  width: 90px;
-  height: 90px;
-  cursor: pointer;
-}
 
-.value {
-  color: $soapstone;
+  &.front {
+    background-color: $squash;
+    border: 1px solid $squash;
+    color: $soapstone;
+    transform: rotateY(180deg);
+  }
+
+  &.back {
+    background-color: $pickled-blue-wood;
+    border: 1px solid $pickled-blue-wood;
+  }
+
+  &.matched {
+    background-color: $jungle-mist;
+    border: 1px solid $jungle-mist;
+  }
 }
